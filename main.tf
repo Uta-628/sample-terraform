@@ -3,9 +3,14 @@ provider "google" {
   zone    = "us-west1-a"
 }
 
+variable "gcp_project_id" {
+  type = string
+}
+
+
 # task1
 resource "google_storage_bucket" "bucket" {
-    name = "qwiklabs-gcp-02-945fd0f769eb-bucket"
+    name = "${var.gcp_project_id}-bucket"
     location = "US-WEST1"
 }
 # task2
